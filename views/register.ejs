@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/style.css">
+<div class="cont">
+    <form action="/add/register" method="POST">
+        <div class="ln">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required class="inp" />
+        </div>
+        <br />
+        <div class="ln">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required class="inp" />
+        </div>
+        <br />
+        <div class="ln">
+            <label for="phone">Phone Number</label>
+            <input type="text" name="phone" id="phone" required class="inp" />
+        </div>
+        <br />
+        <div class="ln">
+            <label for="job">Job Title</label>
+            <input type="text" name="job" id="job" required class="inp" />
+        </div>
+        <br />
+        <div class="ln">
+            <label for="website">Website</label>
+            <input type="text" name="website" id="website" required class="inp" />
+        </div>
+        <br />
+        <div class="ln">
+            <label for="social">Social Media</label>
+            <input type="text" name="social" id="social" required class="inp" />
+        </div>
+        <br />
+        <input type="submit" value="REGISTER" class="btn">
+        <br /><br />
+        <a href="/" class="abtn2">HOME</a>
+    </form>
+</div>
+
+<div class="cont">
+    <div class="marc">
+        <ul>
+            <% registro.forEach( registros=> { %>
+                <li>name: <%= registros.name %><br> 
+                    email: <%= registros.email %><br> 
+                    phone: <%= registros.phone %><br>
+                    job: <%= registros.job %><br> 
+                    website: <%= registros.website %><br> 
+                    social: <%= registros.social %>                      
+                </li><br>
+                <a href="/delete/register/<%= registros._id %>" class="btnd">X</a><br><br>
+            <% }) %>
+        </ul>
+    </div>
+</div>
