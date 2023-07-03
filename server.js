@@ -16,6 +16,7 @@ mongoose.connect(DB, {
 
 // Middleware
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/view');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
