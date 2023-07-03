@@ -5,8 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config({ path: './config.env' });
 
 // Connect to MongoDB
-//mongoose.connect('mongodb://localhost:27017/maurodb', { useNewUrlParser: true, useUnifiedTopology: true })
-const DB = process.env.DATABASE;
+const DB = process.env.DATABASE??"mongodb+srv://mindwarlock:nn23QBCpDLCxKz8R@cluster0.1wuzr0s.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(DB, {
   useNewUrlParser: true,
   useUnifiedTopology: true 
